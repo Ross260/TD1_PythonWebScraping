@@ -48,7 +48,7 @@ if response.status_code == 200:
         print(f"{i}- {title.string}  {href}")
 
     # Création du fichier CSV en mode écriture
-    with open("Scraping.csv", mode="w", newline="", encoding="utf-8") as file:
+    with open("Exercice1/Scraping.csv", mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
 
         # Écrire l'en-tête
