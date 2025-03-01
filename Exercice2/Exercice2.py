@@ -54,6 +54,5 @@ if response.status_code == 200:
             print(content)
         else:
             print("Aucune balise <span> trouvée dans le <p>.")
-
 else:
     print(f"Erreur {response.status_code}")
