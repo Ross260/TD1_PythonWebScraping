@@ -4,8 +4,7 @@
 Objectif : Extraire les informations sur les produits d’une catégorie spécifique.
 
 Consigne :
-1. Choisissez une catégorie sur Amazon (ex : ordinateurs portables,
-téléphones).
+1. Choisissez une catégorie sur Amazon (ex : ordinateurs portables).
 2. Récupérez les trois premières pages de résultats.
 3. Extrayez pour chaque produit
 -> Le nom du produit
