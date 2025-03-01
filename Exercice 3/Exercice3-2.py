@@ -1,5 +1,5 @@
 """
-    Scraper un site e-commerce (Amazon, Cdiscount, etc.)
+    Scraper un site e-commerce (Amazon)
 
 Objectif : Extraire les informations sur les produits d’une catégorie spécifique.
 
@@ -10,7 +10,7 @@ téléphones).
 3. Extrayez pour chaque produit
 -> Le nom du produit
 -> Le prix
-4. Affichez les 5 premiers produits.
+4. Affichez les ... premiers produits des trois premières pages.
 
 Bonus :
 -> Ajoutez un User-Agent pour éviter d’être bloqué.
@@ -22,6 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
+import openpyxl
 
 # l'url de la page des catégories
 url = 'https://www.amazon.com.be/s?bbn=27862509031&rh=n%3A27862509031%2Cp_36%3A28057314031&content-id=amzn1.sym' \
@@ -43,6 +44,7 @@ for j in range(1, 4):
     print(f"Page {j}")
     # Envoyer une requête GET à l'URL
     response = requests.get(current_url, headers=headers)
+    time.sleep(1)
 
     # Vérifier si la requête a réussi
     if response.status_code == 200:
@@ -57,7 +59,7 @@ for j in range(1, 4):
         prices = soup.find_all('span', class_='a-price-whole')
         fractions = soup.find_all('span', class_='a-price-fraction')
 
-        for h2, price, fraction in zip(h2_titles[:5], prices[:5], fractions[:5]):
+        for h2, price, fraction in zip(h2_titles, prices, fractions):
             i = i + 1
             # print(f"{i}- {h2.text}   Prix : {price.text}{fraction.text}")
 
@@ -80,10 +82,23 @@ for j in range(1, 4):
     else:
         print("La requête a échoué avec le code d'état:", response.status_code)
 
-print(data)
+print(data)  # petite vérification du contenu du mon dictionnaire
+
 # transformation en fichier csv
 df = pd.DataFrame(data)
 df.to_csv("Produit.csv", index=False, encoding="utf-8")
 
-# df = pd.DataFrame(data)
-# df.to_excel("donnees.xlsx", index=False)
+# transformation en fichier excel
+# 1. je crée un nouveau classeur excel
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+
+# 2. j'écrire les en têtes de colonne
+sheet.append(list(data.keys()))
+
+# 3. j'écrire les données
+for row in zip(*data.values()):
+    sheet.append(row)
+
+# 4. j'enregistre le fichier excel
+workbook.save("Produits_excel.xlsx")

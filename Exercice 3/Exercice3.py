@@ -1,5 +1,5 @@
 """
-    Scraper un site e-commerce (Amazon, Cdiscount, etc.)
+    Scraper un site e-commerce (Cdiscount)
 
 Objectif : Extraire les informations sur les produits d’une catégorie spécifique.
 
@@ -10,7 +10,7 @@ téléphones).
 3. Extrayez pour chaque produit
 -> Le nom du produit
 -> Le prix
-4. Affichez les 5 premiers produits.
+4. Affichez les ... premiers produits des trois premières pages.
 
 Bonus :
 -> Ajoutez un User-Agent pour éviter d’être bloqué.
