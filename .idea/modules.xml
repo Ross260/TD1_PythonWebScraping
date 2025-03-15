@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TD1_Python_Web_Scraping.iml" filepath="$PROJECT_DIR$/.idea/TD1_Python_Web_Scraping.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../TD1_exploitation/.idea/TD1_exploitation.iml" filepath="$PROJECT_DIR$/../TD1_exploitation/.idea/TD1_exploitation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../TP1_pythonScraping/.idea/TP1_pythonScraping.iml" filepath="$PROJECT_DIR$/../TP1_pythonScraping/.idea/TP1_pythonScraping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TD1_nettoyage_de_données/.idea/TD1_exploitation.iml" filepath="$PROJECT_DIR$/../TD1_nettoyage_de_données/.idea/TD1_exploitation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../newProject/TP1_pythonScraping/.idea/TP1_pythonScraping.iml" filepath="$PROJECT_DIR$/../newProject/TP1_pythonScraping/.idea/TP1_pythonScraping.iml" />
       <module fileurl="file://$PROJECT_DIR$/../newProject/.idea/newProject.iml" filepath="$PROJECT_DIR$/../newProject/.idea/newProject.iml" />
     </modules>
   </component>
