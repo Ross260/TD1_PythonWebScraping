@@ -54,7 +54,7 @@ for j in range(1, 4):
         # print(soup.prettify()) # recupère tous les éléments de la page mais de manière formaté
 
         # Extraction des Noms des articles et leurs prix
-        titles = soup.find_all('h3', class_='a-size-base-plus')
+        h2_titles = soup.find_all('h2', class_='a-size-base-plus')
         prices = soup.find_all('span', class_='a-price-whole')
         fractions = soup.find_all('span', class_='a-price-fraction')
 
