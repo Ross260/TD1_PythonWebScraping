@@ -36,6 +36,7 @@ data = {
     "Nom_produit": [],
     "Prix": []
 }
+
 current_url = url
 i = 0
 for j in range(1, 4):
